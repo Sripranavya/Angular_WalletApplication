@@ -1,0 +1,27 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Update Wallet </h3>
+    <form (ngSubmit) = "onSubmit()">
+  
+      <div class="form-group">
+        <label> Wallet ID </label>
+        <input type="number" class ="form-control" id = "id"
+               [(ngModel)] = "wallet.WalletId" name = "WalletId">
+      </div>
+  
+      <div class="form-group">
+        <label> Wallet Name</label>
+        <input type="text" class ="form-control" id = "name"
+               [(ngModel)] = "wallet.WalletName" name = "WalletName">
+      </div>
+  
+      <div class="form-group">
+        <label> Balance </label>
+        <input type="number" class ="form-control" id = "balance"
+               [(ngModel)] = "wallet.WalletBalance" name = "WalletBalance">
+      </div>
+  
+      <button class = "btn btn-success" type ="submit"> Submit </button>
+  
+    </form>
+  </div>
+  

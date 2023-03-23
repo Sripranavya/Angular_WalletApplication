@@ -1,0 +1,19 @@
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+
+.spacer
+{
+  flex: 1 2 auto;
+}
+.box
+{
+  text-decoration: none;
+
+  border-radius:5px;
+  font-weight:bold;
+  border:none;
+  margin:0 10px;
+}
+.box:hover{
+  border:0;
+  box-shadow:0 0 3px #ffffff, 0 0 3px #ffffff,0 0 20px #ffffff;
+}

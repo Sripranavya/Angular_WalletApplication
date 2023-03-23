@@ -1,0 +1,49 @@
+<div class="container">
+    <br>
+    <br>
+    <h1>Login Form</h1>
+    <form #userForm="ngForm">
+  
+      <div class="row">
+        <div class="form-group">
+          <label for="ename">Email:</label>
+  
+        </div>
+        <div class="form-group">
+          <input type="email" style="text-align:center;"  [(ngModel)]="wallet.emailId" #nameRef="ngModel" name="emailId" id="emailId"
+             title="Please enter valid email ID, e.g name@gmail.com" required>
+          <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
+            <p *ngIf="nameRef.errors?.['required']" class="text-danger">Email ID is required, can't be blank!!.</p>
+            <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Please enter a valid email, name@gmail.com</p>
+          </div>
+        </div>
+  
+      </div>
+       
+      <br>
+      <div class="row">
+  
+        <div class="form-group">
+          <label for="passwordId">Password:</label>
+        </div>
+  
+        <div class="form-group">
+          <input type="password" style="text-align:center;" [(ngModel)]="wallet.password" #passwordRef="ngModel" name="password" id="passwordId"
+            pattern="[a-zA-Z0-9]{7,}" required>
+  
+          <div *ngIf="passwordRef.invalid && (passwordRef.touched || passwordRef.dirty)">
+            <p *ngIf="passwordRef.errors?.['required']" class="text-danger">Password is required, cant be blank!!.</p>
+            <p *ngIf="passwordRef.errors?.['pattern']" class="text-danger">Password must be at least 8 chars.</p>
+  
+          </div>
+        </div>
+  
+      </div>
+       <br>
+       <div class="container"> 
+        <button class = "btn btn-success" (click)="submitLoginForm()" type="submit">Submit</button>
+       
+      </div>
+    </form>
+  </div>
+  

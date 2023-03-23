@@ -1,0 +1,49 @@
+<div class="col-md-6 offset-md-3">
+    <br>
+    <h3> Create a New Wallet </h3>
+  
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label for="WalletId">Wallet ID</label>
+          <input type="number" class="form-control" id="WalletId"
+                 required minlength="1"
+                 [(ngModel)] = "newWallet.WalletId" name = "WalletId" >
+    
+        </div>
+        <br>
+        <br>
+        <div class="form-group">
+          <label>Wallet Name</label>
+          <input type="text" id="WalletName" name="WalletName" class="form-control"
+                 required minlength="10"
+                 [(ngModel)]="newWallet.WalletName" #name="ngModel">
+    
+          <div *ngIf="name.invalid && (name.dirty || name.touched)"
+               class="alert">
+    
+            <div *ngIf="name.errors?.['required']">
+             Wallet Name is required.
+            </div>
+            <div *ngIf="name.errors?.['minlength']">
+             Wallet Name must be at least 10 characters long.
+            </div>
+    
+          </div>
+    
+        </div>
+        <br>
+        <br>
+        <div class="form-group">
+          <label>Wallet Balance</label>
+          <input type="number" class="form-control" id="WalletBalance"
+                 [(ngModel)] = "newWallet.WalletBalance" name = "WalletBalance">
+        </div>
+    
+        <br>
+        <br>
+        <button class = "btn btn-success" type="submit">Submit</button>
+    
+      </form>
+    </div> 
+
